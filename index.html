@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandit Vision | Control Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">BANDIT<span>VISION</span></div>
+            <ul class="nav-links">
+                <li class="active">Dashboard</li>
+                <li>Visual Tracker</li>
+                <li>Combat Logs</li>
+                <li>Settings</li>
+            </ul>
+            <div class="status-panel">
+                <p>Status: <span id="status-text" class="ready">READY</span></p>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <h1>Combat Analysis Module</h1>
+                <button id="launch-btn" class="launch-btn">START TRACKER</button>
+            </header>
+
+            <section class="grid">
+                <div class="card aimbot-card">
+                    <div class="card-header">
+                        <h3>Aimbot Configuration</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="master-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label>Smoothness (ms)</label>
+                        <input type="range" min="1" max="100" value="20" class="range-slider" id="smooth-slider">
+                        <span class="val-display">20ms</span>
+                    </div>
+
+                    <div class="option-group">
+                        <label>Field of View (FOV)</label>
+                        <input type="range" min="10" max="500" value="150" class="range-slider" id="fov-slider">
+                        <span class="val-display">150px</span>
+                    </div>
+
+                    <div class="option-group">
+                        <label>Target Priority</label>
+                        <select class="custom-select">
+                            <option value="closest">Closest to Crosshair</option>
+                            <option value="lowest-hp">Lowest Health</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox-list">
+                        <label class="check-item">
+                            <input type="checkbox"> Draw FOV Circle
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" checked> Predict Movement
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
